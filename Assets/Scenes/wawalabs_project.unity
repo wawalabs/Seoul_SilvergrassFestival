@@ -15841,7 +15841,7 @@ MonoBehaviour:
   smoothTime: 0.08
   timeoutSec: 0.5
   maxPlayers: 20
-  assignMaxDistance: 1
+  assignMaxDistance: 1.25
   spawnCooldown: 0.15
   playerPrefab: {fileID: 581350054663752635, guid: 30cf7e74863d1c54392905b6e1fa4f8e,
     type: 3}
@@ -15851,7 +15851,7 @@ MonoBehaviour:
     type: 3}
   clusterMinMembers: 3
   clusterRadius: 3
-  maxClusters: 2
+  maxClusters: 10
   vfxParam_PlayerPos: PlayerPos
   vfxEvent_OnAppear: OnAppear
   vfxEvent_OnUpdate: RipplePulse
