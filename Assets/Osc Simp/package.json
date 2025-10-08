@@ -1,0 +1,29 @@
+{
+  "name": "com.sixthsensor.osc-simpl",
+  "displayName": "Osc Simpl",
+  "version": "2.3.11",
+  "description": "An Open Sound Control (OSC) implementation tailored for Unity and designed for those who love the flexibility of scripting.",
+  "author": {
+    "name": "Sixth Sensor",
+    "email": "ce@sixthsensor.dk",
+    "url": "https://sixthsensor.dk"
+  },
+  "unity": "2021.3",
+  "documentationUrl": "https://sixthsensor.dk/assetstore/oscsimpl/2_3_5/Manual.pdf",
+  "dependencies": {
+    "com.unity.modules.ui": "1.0.0"
+  },
+  "type": "tool",
+  "keywords": [
+    "Networking",
+    "OSC",
+    "Open Sound Control"
+  ],
+  "samples": [
+    {
+      "displayName": "Introductory Examples",
+      "description": "Example to get you started.",
+      "path": "Samples~/Introductory Examples"
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+    "name": "OscSimpl.Samples",
+    "rootNamespace": "",
+    "references": [
+        "GUID:85c6ed54a8ba240b19e58569d38af4c2"
+    ],
+    "includePlatforms": [
+        "Editor",
+        "iOS",
+        "macOSStandalone",
+        "WindowsStandalone32",
+        "WindowsStandalone64"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
