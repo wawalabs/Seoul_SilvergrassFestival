@@ -15656,7 +15656,7 @@ GameObject:
   - component: {fileID: 978608015}
   - component: {fileID: 978608019}
   m_Layer: 0
-  m_Name: Camera_Spout
+  m_Name: Camera_SpoutSender
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
