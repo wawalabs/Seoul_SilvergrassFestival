@@ -1,13 +1,14 @@
 using UnityEngine;
+using TMPro;   // 추가
 using UnityEngine.UI;
 
 public class MaskSwitcher : MonoBehaviour
 {
-    public Renderer maskingPlane;         // MaskingPlane의 MeshRenderer
-    public Texture sharpTex, blurTex;     // 두 마스크 텍스처
-    public Dropdown dropdown;             // Main UI의 Sharp/Blur 선택
+    public Renderer maskingPlane;
+    public Texture sharpTex, blurTex;
+    public TMP_Dropdown dropdown;    // TMP용 드롭다운으로 변경
 
-    const string Key = "MaskType";        // 0: Sharp, 1: Blur
+    const string Key = "MaskType";
 
     void Start()
     {
