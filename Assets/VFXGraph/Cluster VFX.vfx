@@ -17,10 +17,10 @@ MonoBehaviour:
   categories: []
   uiBounds:
     serializedVersion: 2
-    x: 226
+    x: 227
     y: -54
-    width: 656
-    height: 2001
+    width: 657
+    height: 1989
 --- !u!114 &114350483966674976
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2368,7 +2368,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: UnityEngine.AnimationCurve, UnityEngine.CoreModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"frames":[{"time":0.0,"value":0.0,"inTangent":0.061819400638341907,"outTangent":0.061819400638341907,"tangentMode":0,"leftTangentMode":1,"rightTangentMode":1,"broken":false},{"time":0.4976262152194977,"value":0.03076295368373394,"inTangent":0.0000799279659986496,"outTangent":0.0000799279659986496,"tangentMode":0,"leftTangentMode":1,"rightTangentMode":1,"broken":false},{"time":0.9968418478965759,"value":-0.000018455088138580322,"inTangent":-0.061659544706344607,"outTangent":-0.061659544706344607,"tangentMode":0,"leftTangentMode":1,"rightTangentMode":1,"broken":false}],"preWrapMode":8,"postWrapMode":8,"version":1}'
+      m_SerializableObject: '{"frames":[{"time":0.0,"value":0.0,"inTangent":0.06083383783698082,"outTangent":0.06083383783698082,"tangentMode":0,"leftTangentMode":1,"rightTangentMode":1,"broken":false},{"time":0.4988389313220978,"value":0.030346287414431573,"inTangent":-0.00006959214806556702,"outTangent":-0.00006959214806556702,"tangentMode":0,"leftTangentMode":1,"rightTangentMode":1,"broken":false},{"time":0.9968418478965759,"value":-0.000018455088138580322,"inTangent":-0.060973022133111957,"outTangent":-0.060973022133111957,"tangentMode":0,"leftTangentMode":1,"rightTangentMode":1,"broken":false}],"preWrapMode":8,"postWrapMode":8,"version":1}'
     m_Space: 2147483647
   m_Property:
     name: Size

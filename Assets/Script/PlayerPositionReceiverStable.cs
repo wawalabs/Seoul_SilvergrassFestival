@@ -32,12 +32,12 @@ public class PlayerPositionReceiverStable : MonoBehaviour
 
     [Header("군집 조건")]
     public int clusterMinMembers = 3;
-    public float clusterRadius = 1.5f; // m
-    public int maxClusters = 8;
+    public float clusterRadius = 2f; // m
+    public int maxClusters = 15;
 
     [Header("군집 옵션(겹침 허용)")]
     public bool useOverlapping = true;     // 겹침 허용 모드 on/off
-    public float clusterMergeEps = 0.6f;   // 가까운 센터 머지 임계(미터)
+    public float clusterMergeEps = 0.7f;   // 가까운 센터 머지 임계(미터)
 
     [Header("VFX 키")]
     public string vfxParam_PlayerPos = "PlayerPos";
