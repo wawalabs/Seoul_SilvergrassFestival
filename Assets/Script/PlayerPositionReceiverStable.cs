@@ -35,6 +35,10 @@ public class PlayerPositionReceiverStable : MonoBehaviour
     public float clusterRadius = 1.5f; // m
     public int maxClusters = 8;
 
+    [Header("군집 옵션(겹침 허용)")]
+    public bool useOverlapping = true;     // 겹침 허용 모드 on/off
+    public float clusterMergeEps = 0.6f;   // 가까운 센터 머지 임계(미터)
+
     [Header("VFX 키")]
     public string vfxParam_PlayerPos = "PlayerPos";
     public string vfxEvent_OnAppear = "OnAppear";
@@ -216,7 +220,10 @@ public class PlayerPositionReceiverStable : MonoBehaviour
         var pts = new List<Vector3>();
         for (int i = 0; i < maxPlayers; i++) if (slots[i].active) pts.Add(slots[i].tracker.position);
 
-        var clusters = FindClusters(pts, clusterRadius, clusterMinMembers, maxClusters);
+        var clusters = useOverlapping
+            ? FindClustersOverlapping(pts, clusterRadius, clusterMinMembers, maxClusters, clusterMergeEps)
+            : FindClusters_NonOverlap(pts, clusterRadius, clusterMinMembers, maxClusters);
+
         SyncClusterFxCount(clusters.Count);
 
         for (int i = 0; i < clusters.Count; i++)
@@ -234,7 +241,82 @@ public class PlayerPositionReceiverStable : MonoBehaviour
         }
     }
 
-    static List<Cluster> FindClusters(List<Vector3> pts, float radius, int minMembers, int maxClusters)
+    // ---- 겹침 허용 버전 ----
+    static List<Cluster> FindClustersOverlapping(List<Vector3> pts, float radius, int minMembers, int maxClusters, float mergeEps)
+    {
+        var result = new List<Cluster>();
+        int n = pts.Count;
+        if (n == 0 || minMembers <= 1) return result;
+
+        float r2 = radius * radius;
+        var cand = new List<(Vector2 c, int m)>(); // 후보 센터, 멤버수(밀도)
+
+        // 각 플레이어 기준으로 반경 내 최근접 (minMembers-1)명 선택 → 후보 센터
+        for (int i = 0; i < n; i++)
+        {
+            Vector2 ci = new Vector2(pts[i].x, pts[i].z);
+
+            var neigh = new List<(float d2, Vector2 p)>();
+            for (int j = 0; j < n; j++)
+            {
+                if (i == j) continue;
+                Vector2 pj = new Vector2(pts[j].x, pts[j].z);
+                float d2 = (pj - ci).sqrMagnitude;
+                if (d2 <= r2) neigh.Add((d2, pj));
+            }
+
+            if (neigh.Count < minMembers - 1) continue;
+
+            neigh.Sort((a, b) => a.d2.CompareTo(b.d2));
+
+            Vector2 sum = ci;
+            for (int k = 0; k < minMembers - 1; k++) sum += neigh[k].p;
+            Vector2 center = sum / minMembers;
+
+            // 실제 반경 내 총 멤버 수(밀도) 집계
+            int members = 1 + neigh.Count;
+            cand.Add((center, members));
+        }
+
+        // 가까운 후보 센터를 머지(과도한 중복 방지)
+        var merged = MergeCenters(cand, mergeEps);
+
+        // 멤버 수(밀도) 상위 maxClusters 남김
+        merged.Sort((a, b) => b.m.CompareTo(a.m));
+        if (merged.Count > maxClusters) merged.RemoveRange(maxClusters, merged.Count - maxClusters);
+
+        foreach (var m in merged)
+            result.Add(new Cluster { center = new Vector3(m.c.x, 0f, m.c.y), size = m.m });
+
+        return result;
+    }
+
+    static List<(Vector2 c, int m)> MergeCenters(List<(Vector2 c, int m)> src, float eps)
+    {
+        var outList = new List<(Vector2 c, int m)>();
+        float eps2 = eps * eps;
+
+        foreach (var it in src)
+        {
+            bool merged = false;
+            for (int i = 0; i < outList.Count; i++)
+            {
+                if ((outList[i].c - it.c).sqrMagnitude <= eps2)
+                {
+                    int mm = outList[i].m + it.m;
+                    Vector2 cc = (outList[i].c * outList[i].m + it.c * it.m) / mm;
+                    outList[i] = (cc, mm);
+                    merged = true;
+                    break;
+                }
+            }
+            if (!merged) outList.Add(it);
+        }
+        return outList;
+    }
+
+    // ---- 기존(겹침 비허용) 버전(참고/백업용) ----
+    static List<Cluster> FindClusters_NonOverlap(List<Vector3> pts, float radius, int minMembers, int maxClusters)
     {
         var clusters = new List<Cluster>();
         int n = pts.Count; if (n == 0 || minMembers <= 1) return clusters;
@@ -255,7 +337,6 @@ public class PlayerPositionReceiverStable : MonoBehaviour
                 Vector3 sum = Vector3.zero; foreach (int k in mem) sum += pts[k];
                 Vector3 center = sum / mem.Count;
 
-                // refine 1회
                 var mem2 = new List<int>();
                 for (int j = 0; j < n; j++) if ((pts[j] - center).sqrMagnitude <= r2) mem2.Add(j);
                 if (mem2.Count >= minMembers)
