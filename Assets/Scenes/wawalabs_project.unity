@@ -17752,9 +17752,9 @@ MonoBehaviour:
   minZ: -5
   maxZ: 5
   smoothTime: 0.08
-  timeoutSec: 0.5
+  timeoutSec: 1
   maxPlayers: 20
-  assignMaxDistance: 1.25
+  assignMaxDistance: 1.5
   spawnCooldown: 0.15
   playerPrefab: {fileID: 581350054663752635, guid: 30cf7e74863d1c54392905b6e1fa4f8e,
     type: 3}
@@ -17763,7 +17763,7 @@ MonoBehaviour:
   clusterVfxPrefab: {fileID: 4024527857492369490, guid: 3e2ce5adf080ebd42beb57871bcd6d5f,
     type: 3}
   clusterMinMembers: 3
-  clusterRadius: 2.5
+  clusterRadius: 2
   maxClusters: 20
   useOverlapping: 1
   clusterMergeEps: 0.7
