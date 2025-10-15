@@ -17485,8 +17485,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45099d624c1e6c14e9514f4e5ea1ed9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _spoutName: SilvergrassFestival
-  _keepAlpha: 1
+  _spoutName: Main
+  _keepAlpha: 0
   _captureMethod: 2
   _sourceCamera: {fileID: 0}
   _sourceTexture: {fileID: 8400000, guid: 9f412dc01903d05419d1be3f5713f0a9, type: 2}
@@ -17752,9 +17752,9 @@ MonoBehaviour:
   minZ: -5
   maxZ: 5
   smoothTime: 0.08
-  timeoutSec: 1
+  timeoutSec: 0.75
   maxPlayers: 20
-  assignMaxDistance: 1.5
+  assignMaxDistance: 1.25
   spawnCooldown: 0.15
   playerPrefab: {fileID: 581350054663752635, guid: 30cf7e74863d1c54392905b6e1fa4f8e,
     type: 3}
@@ -17763,7 +17763,7 @@ MonoBehaviour:
   clusterVfxPrefab: {fileID: 4024527857492369490, guid: 3e2ce5adf080ebd42beb57871bcd6d5f,
     type: 3}
   clusterMinMembers: 3
-  clusterRadius: 2
+  clusterRadius: 2.25
   maxClusters: 20
   useOverlapping: 1
   clusterMergeEps: 0.7

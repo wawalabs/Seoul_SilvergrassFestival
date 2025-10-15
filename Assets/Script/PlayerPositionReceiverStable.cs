@@ -16,13 +16,13 @@ public class PlayerPositionReceiverStable : MonoBehaviour
 
     [Header("스무딩/타임아웃")]
     public float smoothTime = 0.08f;
-    public float timeoutSec = 0.5f;
+    public float timeoutSec = 1.0f;
 
     [Header("최대 인원")]
     public int maxPlayers = 20;
 
     [Header("트래킹 매개변수")]
-    public float assignMaxDistance = 1.2f;
+    public float assignMaxDistance = 1.5f;
     public float spawnCooldown = 0.15f;
 
     [Header("프리팹")]
@@ -33,7 +33,7 @@ public class PlayerPositionReceiverStable : MonoBehaviour
     [Header("군집 조건")]
     public int clusterMinMembers = 3;
     public float clusterRadius = 2f; // m
-    public int maxClusters = 15;
+    public int maxClusters = 20;
 
     [Header("군집 옵션(겹침 허용)")]
     public bool useOverlapping = true;     // 겹침 허용 모드 on/off
