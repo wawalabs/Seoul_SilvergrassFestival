@@ -76,7 +76,7 @@ Material:
     - _QueueOffset: 0
     - _ReceiveShadows: 0
     - _Refraction: 0.04
-    - _Smothness: 0.5
+    - _Smothness: 0.55
     - _SrcBlend: 1
     - _Surface: 1
     - _Transparent: 0

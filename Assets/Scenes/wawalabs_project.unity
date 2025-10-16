@@ -10527,7 +10527,7 @@ Light:
   m_Type: 1
   m_Shape: 0
   m_Color: {r: 0, g: 0.28627452, b: 0.3764706, a: 1}
-  m_Intensity: 3
+  m_Intensity: 3.5
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -18555,7 +18555,7 @@ Light:
   m_Type: 1
   m_Shape: 0
   m_Color: {r: 0.14509805, g: 0.5529412, b: 0.70980394, a: 1}
-  m_Intensity: 0.6
+  m_Intensity: 0.7
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -24808,7 +24808,7 @@ MonoBehaviour:
   minStepMeters: 0.2
   rippleShader: {fileID: 4800000, guid: 1f2e0f0f642062f40a9802b15bbdfb79, type: 3}
   damping: 0.975
-  waveSpeed: 2
+  waveSpeed: 1.75
   dispersion: 0.5
   addShader: {fileID: 4800000, guid: 22f722cf0f12fdd44aae1ddcad94441b, type: 3}
   pulseInterval: 0.5
