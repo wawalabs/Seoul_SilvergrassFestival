@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: RippleEffect
+  m_Name: RippleEffect2
   m_Shader: {fileID: -6465566751694194690, guid: d59b7d29d19de0b408b272fb51fa2177,
     type: 3}
   m_Parent: {fileID: 0}
@@ -45,10 +45,10 @@ Material:
     - _EdgeGain: 1
     - _Gamma: 1
     - _Intensity: 1
-    - _Normal_Strength: 0.2
+    - _Normal_Strength: 0.5
     - _QueueControl: 0
     - _QueueOffset: 1
-    - _Smoothness: 0.6
+    - _Smoothness: 0.5
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _GlowColor: {r: 1, g: 1, b: 1, a: 1}
