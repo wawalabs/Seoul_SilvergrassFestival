@@ -17696,7 +17696,7 @@ MonoBehaviour:
     type: 3}
   clusterVfxPrefab: {fileID: 4024527857492369490, guid: 3e2ce5adf080ebd42beb57871bcd6d5f,
     type: 3}
-  clusterMinMembers: 2
+  clusterMinMembers: 3
   clusterRadius: 2.25
   maxClusters: 20
   useOverlapping: 1
