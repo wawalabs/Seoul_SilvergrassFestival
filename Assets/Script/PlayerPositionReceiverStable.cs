@@ -31,7 +31,7 @@ public class PlayerPositionReceiverStable : MonoBehaviour
     public GameObject clusterVfxPrefab; // 군집 VFX 프리팹(동시 다수)
 
     [Header("군집 조건")]
-    public int clusterMinMembers = 3;
+    public int clusterMinMembers = 2;
     public float clusterRadius = 2f; // m
     public int maxClusters = 20;
 

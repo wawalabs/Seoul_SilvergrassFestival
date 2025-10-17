@@ -45,7 +45,7 @@ Material:
     - _EdgeGain: 1
     - _Gamma: 1
     - _Intensity: 1
-    - _Normal_Strength: 0.2
+    - _Normal_Strength: 0.15
     - _QueueControl: 0
     - _QueueOffset: 1
     - _Smoothness: 0.65
